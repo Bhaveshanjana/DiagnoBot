@@ -1,3 +1,6 @@
+import {getMedicalAnalysis} from "./services/rapidapi_service";
+
+
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
@@ -23,7 +26,6 @@ app.post("/api/analyze-symptoms", async (req, res) => {
 
     res.json(analysis);
   } catch (error) {
-
     if (error.message.includes("API key")) {
       return res.status(500).json({
         errors: "Server configuration error, Please contact support.",
