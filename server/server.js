@@ -1,4 +1,4 @@
-import {getMedicalAnalysis} from "./services/rapidapi_service";
+import getMedicalAnalysis from "./services/rapidapi_service.js";
 
 
 import express from "express";
