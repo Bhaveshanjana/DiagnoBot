@@ -1,5 +1,5 @@
 import React from "react";
-import SymptomChecker from "./components/SymtomChecker";
+import SymptomChecker from "./components/SymptomChecker";
 
 const App = () => {
   return (
