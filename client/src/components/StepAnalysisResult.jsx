@@ -29,7 +29,7 @@ const StepAnalysisResult = ({ analysis, onRestart }) => {
           <h3 className="font-semibold text-blue-600 mb-1">
             Recommended Actions
           </h3>
-          <p className="whitespace-pre-line">{analysis.recommendations.recommendedActions}</p>
+          <p className="whitespace-pre-line">{analysis.recommendations}</p>
         </div>
 
         <div className="p-4 bg-white border border-gray-200 rounded shadow-sm">
