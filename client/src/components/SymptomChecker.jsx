@@ -53,7 +53,7 @@ const SymptomChecker = () => {
       };
 
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}`,
+        `${import.meta.env.VITE_BASE_URL}/api/analyze-symptoms`,
         {
           symptoms,
           patientInfo: formattedPatientInfo,
@@ -64,12 +64,15 @@ const SymptomChecker = () => {
           },
         }
       );
-
-      const data = await response.json();
+      const data = response.data;
       setAnalysis(data);
       handleNext();
     } catch (err) {
-      setError("An error occurred while analyzing symptoms");
+      if (err.response.data.details) {
+        setError("Free api limit is reached");
+      } else {
+        setError("An error occurred while analyzing symptoms", err);
+      }
     } finally {
       setLoading(false);
     }
