@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default getMedicalAnalysis = async (symptoms, patientInfo = {}) => {
+export default async function getMedicalAnalysis(symptoms, patientInfo = {}) {
   try {
     if (!process.env.RAPIDAPI_KEY) {
       throw new Error("RAPIDAPI_KEY is not configured");
@@ -104,6 +104,7 @@ export default getMedicalAnalysis = async (symptoms, patientInfo = {}) => {
     }
     throw new Error("Unexpected response from API");
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch symptoms data" });
+    console.error("Request setup error:", error.message);
+    throw error;
   }
-};
+}
