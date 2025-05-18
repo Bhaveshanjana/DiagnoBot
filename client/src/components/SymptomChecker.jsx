@@ -79,7 +79,7 @@ const SymptomChecker = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-6">
+    <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-6 mt-12">
       <h1 className="text-3xl font-bold  text-blue-600 mb-6 flex  justify-center gap-2">
         Symptom Checker
       </h1>
